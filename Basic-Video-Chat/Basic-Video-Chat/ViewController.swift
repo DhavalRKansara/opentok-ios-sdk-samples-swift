@@ -39,10 +39,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // High-accuracy landmark detection and face classification
+        let options = FaceDetectorOptions()
         options.performanceMode = .accurate
         options.landmarkMode = .all
         options.classificationMode = .all
-        options.contourMode = .all
+        
+        // Real-time contour detection of multiple faces
+         options.contourMode = .all
+        
         doConnect()
     }
     
@@ -156,15 +161,15 @@ extension ViewController: OTPublisherDelegate {
         
         print("Publishing")
         if let pubView = publisher1.view {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                
                 let myImage = pubView.screenshot()
-                
-                self.faceDetection(myImage: myImage)
-                
                 let imageView = UIImageView(image: myImage)
                 imageView.frame = CGRect(x: 0, y: kWidgetHeight, width: kWidgetWidth, height: kWidgetHeight)
-                
                 self.view.addSubview(imageView)
+                
+                self.faceDetection(myImage: myImage)
+
             }
         }
     }
@@ -216,11 +221,11 @@ extension ViewController: OTSubscriberDelegate {
             let faceDetector = FaceDetector.faceDetector(options: options)
             
             faceDetector.process(visionImage) { faces, error in
-                if error == nil, let faces: [Face] = faces, !faces.isEmpty {
+                if error == nil, let detectedFaces: [Face] = faces, !detectedFaces.isEmpty {
                     print(" ********************** No Face Found ************************")
                     
-                    if (faces.first?.smilingProbability ?? 0) > 0.6 {
-                        print("====================== smiling ================================>")
+                    if (detectedFaces.first?.smilingProbability ?? 0) > 0.6 {
+                        print("====================== smiling ================================")
                     }
                 }else{
                     print("No Face Found")
