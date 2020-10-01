@@ -12,9 +12,9 @@ import MLKit
 
 // *** Fill the following variables using your own Project info  ***
 // ***            https://tokbox.com/account/#/                  ***
-let kApiKey = "46716702"
-let kSessionId = "2_MX40NjcxNjcwMn5-MTYwMTI3OTQxMDIxOX5qL0prOXhoWS9ZeTVJTk9EMDlVNzB1alR-fg"
-let kToken = "T1==cGFydG5lcl9pZD00NjcxNjcwMiZzaWc9Njk5OWIzNDQ0ZmIwYWUzYTc2OGE4ODgxNzNjMjk3ZTIyYzJjZmVmYjpzZXNzaW9uX2lkPTJfTVg0ME5qY3hOamN3TW41LU1UWXdNVEkzT1RReE1ESXhPWDVxTDBwck9YaG9XUzlaZVRWSlRrOUVNRGxWTnpCMWFsUi1mZyZjcmVhdGVfdGltZT0xNjAxMzgxMzQzJm5vbmNlPTAuNjcxNzIwODQ4OTM2MTEyNiZyb2xlPXB1Ymxpc2hlciZleHBpcmVfdGltZT0xNjAxNDAyOTQxJmluaXRpYWxfbGF5b3V0X2NsYXNzX2xpc3Q9"
+let kApiKey = ""
+let kSessionId = ""
+let kToken = ""
 
 let kWidgetHeight = 240
 let kWidgetWidth = 320
